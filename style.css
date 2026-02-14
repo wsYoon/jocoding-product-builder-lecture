@@ -6,32 +6,76 @@ body {
   justify-content: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #f0f0f0;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme change */
 }
 
-h1 {
+/* Light mode default styles */
+body.light-mode {
+  background-color: #f0f0f0;
   color: #333;
 }
 
-#lottery-numbers {
-  margin-top: 20px;
-  font-size: 2em;
-  font-weight: bold;
+body.light-mode h1 {
+  color: #333;
+}
+
+body.light-mode #lottery-numbers {
   color: #007bff;
 }
 
+body.light-mode button {
+  background-color: #007bff;
+  color: white;
+}
+
+body.light-mode button:hover {
+  background-color: #0056b3;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+body.dark-mode h1 {
+  color: #f0f0f0;
+}
+
+body.dark-mode #lottery-numbers {
+  color: #66ccff;
+}
+
+body.dark-mode button {
+  background-color: #66ccff;
+  color: #333;
+}
+
+body.dark-mode button:hover {
+  background-color: #3399cc;
+}
+
+/* Common button styles */
 button {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 1.2em;
   cursor: pointer;
-  background-color: #007bff;
-  color: white;
   border: none;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-button:hover {
-  background-color: #0056b3;
+#theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 15px;
+    font-size: 1em;
+    background-color: #ccc;
+    color: #333;
+}
+
+#theme-toggle:hover {
+    background-color: #bbb;
 }
